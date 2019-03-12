@@ -1,0 +1,12 @@
+{
+  "name": "magic-8ball",
+  "version": "1.0.0",
+  "description": "Simple web-app implementation of the magic 8-ball",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Chris-1101/magic-8ball.git"
+  },
+  "author": "Chris MacBain",
+  "license": "MIT"
+}
