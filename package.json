@@ -8,5 +8,8 @@
     "url": "https://github.com/Chris-1101/magic-8ball.git"
   },
   "author": "Chris MacBain",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
