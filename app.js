@@ -4,21 +4,25 @@ const app = express();
 const port = 3000;
 
 // Other Dependencies
+const bodyParser = require('body-parser');
 const jsx = require('express-react-views');
 const path = require('path');
 
 // Routers
-const indexRouter = require('./routes/index');
-const statsRouter = require('./routes/stats');
+const indexRouter = require('./app/routes/index');
+const statsRouter = require('./app/routes/stats');
 
 // Config
-app.set('views', path.join(__dirname, 'views')); // Views
+app.use(bodyParser.json()); // Parse POST Requests
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('app/public')); // Static Resources
+app.set('views', path.join(__dirname, 'app/views')); // Views
 app.set('view engine', 'jsx'); // View Engine
 app.engine('jsx', jsx.createEngine());
-app.use(express.static('public')); // Static Resources
 
 // Routes
-app.get('/', indexRouter);
+app.use('/', indexRouter);
+// app.post('/', indexRouter);
 app.get('/stats', statsRouter);
 
 // Launch Server
