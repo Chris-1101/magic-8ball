@@ -1,5 +1,6 @@
 const React = require('react');
 const NavBar = require('./nav');
+const Logo = require('./logo');
 
 // Main Page Layout
 class PageLayout extends React.Component
@@ -18,6 +19,7 @@ class PageLayout extends React.Component
         </head>
         <body>
           <NavBar />
+          <Logo />
           { this.props.children }
         </body>
       </html>
