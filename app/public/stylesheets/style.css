@@ -1,10 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
+
+/* Global */
 body {
-  padding: 50px;
+  padding: 30px;
   color: white;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: #0297D6 url('../images/page_bg.jpg') no-repeat top / cover;
 }
 
 a {
-  color: #00B7FF;
+  color: white;
+  text-decoration: none;
+}
+
+/* Generic */
+.flex {
+  display: flex;
+}
+
+.spbe {
+  justify-content: space-between;
+}
+
+/* Navigation */
+#peak-logo {
+  width: 100px;
+  height: auto;
+}
+
+.inline-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  line-height: 24px;
+}
+
+.inline-list li {
+  margin-right: 50px;
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-variant: small-caps;
+}
+
+.inline-list li i {
+  vertical-align: -1px;
+  padding-right: 10px;
+}
+
+#menu-logo {
+  font-size: 24px;
+}
+
+/* Logo */
+#m8b-logo {
+  text-align: center;
+}
+
+#m8b-logo img {
+  margin: 30px 0;
+  width: 500px;
+  height: auto;
 }
