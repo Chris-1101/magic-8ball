@@ -1,6 +1,8 @@
 body {
   padding: 50px;
+  color: white;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #0297D6 url('../images/page_bg.jpg') no-repeat top / cover;
 }
 
 a {
