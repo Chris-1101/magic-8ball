@@ -13,6 +13,7 @@ class PageLayout extends React.Component
           <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
           <title>{ this.props.appName } - { this.props.title }</title>
           <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" />
         </head>
         <body>
           { this.props.children }
