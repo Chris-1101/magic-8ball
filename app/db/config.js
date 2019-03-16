@@ -15,7 +15,7 @@ Question.belongsTo(Answer);
 Answer.belongsTo(AnswerType);
 
 // Initialise & Seed Database
-db.sync({ force: true }).then(() => {
+db.sync({ force: false }).then(() => {
   AnswerType.findAll().then(answerTypes => {
     if (!answerTypes.length)
     {
