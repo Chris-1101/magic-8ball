@@ -1,7 +1,7 @@
 const React = require('react');
-const GitHubRibbon = require('./ribbon');
-const NavBar = require('./nav');
-const Logo = require('./logo');
+const GitHubRibbon = require('./_ribbon');
+const NavBar = require('./_nav');
+const Logo = require('./_logo');
 
 // Main Page Layout
 class PageLayout extends React.Component
