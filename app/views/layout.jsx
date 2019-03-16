@@ -1,4 +1,5 @@
 const React = require('react');
+const GitHubRibbon = require('./ribbon');
 const NavBar = require('./nav');
 const Logo = require('./logo');
 
@@ -19,6 +20,7 @@ class PageLayout extends React.Component
           <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
         </head>
         <body>
+          <GitHubRibbon />
           <NavBar />
           <Logo />
           { this.props.children }
