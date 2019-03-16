@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
 
-/* Global */
+// Page
 body {
   padding: 30px;
   color: white;
@@ -19,7 +19,7 @@ a {
   text-align: center;
 }
 
-/* Generic */
+// Generic
 .flex {
   display: flex;
 }
@@ -28,48 +28,50 @@ a {
   justify-content: space-between;
 }
 
-/* Navigation */
+// Navigation
 #peak-logo {
   width: 100px;
   height: auto;
 }
 
+@nav-height: 24px;
+
 .inline-list {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  line-height: 24px;
-}
+  line-height: @nav-height;
 
-.inline-list li {
-  margin-right: 50px;
-  display: inline-block;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-variant: small-caps;
-}
+  li {
+    margin-right: 50px;
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-variant: small-caps;
 
-.inline-list li i {
-  vertical-align: -1px;
-  padding-right: 10px;
+    i {
+      vertical-align: -1px;
+      padding-right: 10px;
+    }
+  }
 }
 
 #menu-logo {
-  font-size: 24px;
+  font-size: @nav-height;
 }
 
-/* Logo */
+// Logo
 #m8b-logo {
   text-align: center;
+
+  img {
+    margin: 30px 0;
+    width: 500px;
+    height: auto;
+  }
 }
 
-#m8b-logo img {
-  margin: 30px 0;
-  width: 500px;
-  height: auto;
-}
-
-/* Question Form */
+// Question Form
 label[for="question"] {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
