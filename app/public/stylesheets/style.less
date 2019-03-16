@@ -9,11 +9,6 @@ body {
   background: #0297D6 url('../images/page_bg.jpg') no-repeat top / 100%;
 }
 
-a {
-  color: white;
-  text-decoration: none;
-}
-
 // Generic
 .flex {
   display: flex;
@@ -42,6 +37,36 @@ a {
   margin-left: 130px;
   width: 70px;
   height: auto;
+}
+
+a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+
+  &:after {
+    position: absolute;
+    display: block;
+    right: 0;
+    width: 0;
+    height: 3px;
+    margin-top: 5px;
+    background-color: white;
+    content: '';
+
+    transition: width .2s ease;
+    -webkit-transition: width .2s ease;
+  }
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+
+    &:after {
+      width: 100%;
+      left: 0;
+    }
+  }
 }
 
 @nav-height: 24px;
