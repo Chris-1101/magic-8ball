@@ -5,7 +5,7 @@ const router = require('express').Router();
 router.get('/', (req, res) => {
   Question.findAll({ include: [{ model: Answer, include: [AnswerType] }] })
   .then(questions => {
-    res.render('index', { appName: "Magic 8-Ball", questions: questions });
+    res.render('index', { questions: questions });
   });
 });
 
@@ -14,7 +14,14 @@ router.post('/', (req, res) => {
   Question.create({
     text: req.body.question,
     answerId: Math.floor(Math.random() * 20) + 1
-  }).then(() => res.redirect('/'));
+  }).then(question => {
+    Question.findByPk(question.id, { include: [{ model: Answer, include: [AnswerType] }] })
+    .then(question => {
+      res.json(question);
+    });
+  });
+  // Traditional form POST method
+  // }).then(() => res.redirect('/'));
 });
 
 module.exports = router;

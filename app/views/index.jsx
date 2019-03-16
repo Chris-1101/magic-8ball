@@ -10,6 +10,7 @@ class IndexPage extends React.Component
       <PageLayout title="Index">
         <QuestionForm />
         <History questions={ this.props.questions } />
+        <script src="javascripts/ajax.js" />
       </PageLayout>
     );
   }
