@@ -8,7 +8,7 @@ class NavBar extends React.Component
     const readme = 'https://github.com/Chris-1101/magic-8ball/blob/master/README.md';
 
     return (
-      <div className="flex spbe">
+      <div id="nav" className="flex spbe">
         <img src="images/peak_logo.png" id="peak-logo" alt="PEAK" />
         <div className="flex spbe">
           <ul className="inline-list">
