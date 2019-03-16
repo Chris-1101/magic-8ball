@@ -5,14 +5,27 @@ const Plotly = require('plotly')('ChrisMB', 'Y2HHjdER1NU2chHcNjBb');
 // Statistics Page
 class StatsPage extends React.Component
 {
-  updateQuestionsGraph()
+  get questionsData()
   {
-    const data = [{
-      x: [ '2019-10-04T12:56:53.761Z', '2019-11-04T12:56:53.761Z', '2019-12-04T12:56:53.761Z' ],
-      y: [ 1, 3, 6 ],
+    const questions = [];
+    const dates = [];
+
+    this.props.questions.forEach(question => {
+      questions.push(question.Count);
+      dates.push(question.Date);
+    });
+
+    return {
+      x: dates,
+      y: questions,
       type: 'scatter',
       line: { color: 'white' }
-    }];
+    };
+  }
+
+  updateQuestionsGraph()
+  {
+    const data = [this.questionsData];
 
     const axisStyle = {
       autorange: true,
@@ -50,14 +63,27 @@ class StatsPage extends React.Component
     console.log('Plotly: loaded questions graph');
   }
 
+  get ratiosData()
+  {
+    const answerTypes = [];
+    const amounts = [];
+
+    this.props.ratios.forEach(ratio => {
+      answerTypes.push(ratio.AnswerType);
+      amounts.push(ratio.Count);
+    });
+
+    return {
+      labels: answerTypes,
+      values: amounts,
+      marker: { colors: [ '#63DA62', '#D9DA62', '#DA4D4D' ] },
+      type: 'pie'
+    };
+  }
+
   updateRatiosGraph()
   {
-    const data = [{
-      labels: [ 'affirmative', 'non-committal', 'negative' ],
-      values: [ 6, 7, 4 ],
-      marker: { colors: [ '#63DA62', '#D9DA62', '#DA4D4D' ] },
-      type: 'pie',
-    }];
+    const data = [this.ratiosData];
 
     const layout = {
       autosize: false,
