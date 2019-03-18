@@ -9,6 +9,7 @@ class IndexPage extends React.Component
     return (
       <PageLayout title="Index">
         <QuestionForm />
+        <Reply />
         <History questions={ this.props.questions } />
         <script src="javascripts/ajax.js" />
       </PageLayout>
@@ -34,6 +35,40 @@ class QuestionForm extends React.Component
             </div>
           </div>
         </form>
+      </div>
+    );
+  }
+}
+
+// Reply
+class Reply extends React.Component
+{
+  render()
+  {
+    return (
+      <div className="reply">
+        <div id="reply1" class="answer up">It is<br />certain</div>
+        <div id="reply2" class="answer up">It is<br />decidedly<br />so</div>
+        <div id="reply3" class="answer down">Without<br />a<br />doubt</div>
+        <div id="reply4" class="answer up">Yes<br />definitely</div>
+        <div id="reply5" class="answer down">You may<br />rely<br />on it</div>
+        <div id="reply6" class="answer down">As I<br />see it,<br />yes</div>
+        <div id="reply7" class="answer up">Most<br />likely</div>
+        <div id="reply8" class="answer down">Outlook<br />good</div>
+        <div id="reply9" class="answer down">Yes</div>
+        <div id="reply10" class="answer down">Signs<br />point to<br />yes</div>
+
+        <div id="reply11" class="answer down">Reply hazy<br />try<br />again</div>
+        <div id="reply12" class="answer up">Ask<br />again<br />later</div>
+        <div id="reply13" class="answer down">Better not<br />tell you<br />now</div>
+        <div id="reply14" class="answer down">Cannot<br />predict<br />now</div>
+        <div id="reply15" class="answer down">Concentrate<br />and ask<br />again</div>
+
+        <div id="reply16" class="answer up">Don't<br />count<br />on it</div>
+        <div id="reply17" class="answer down">My reply<br />is<br />no</div>
+        <div id="reply18" class="answer down">My<br />sources<br />say<br />no</div>
+        <div id="reply19" class="answer down">Outlook<br />not so<br />good</div>
+        <div id="reply20" class="answer up">Very<br />doubtful</div>
       </div>
     );
   }

@@ -1,8 +1,4 @@
-/* NOTE: This whole file is a bit of a messy hack
- * The Express middleware used for React couldn't do
- * this straight from the components for some reason,
- * which would have been ideal, so here's to improvising.
- */
+// AJAX Form Submission
 function handleSubmit(e)
 {
   e.preventDefault(); // Prevent Form Submission
@@ -40,6 +36,7 @@ function handleSubmit(e)
     const question = {
       text: response.text,
       answer: response.answer.text,
+      replyId: 'reply' + response.answerId,
       answerType: colours[response.answer.answerType.name],
       date: dateTime.toLocaleString('en-GB', { day: '2-digit', month: 'short' }),
       time: dateTime.toLocaleString('en-GB', { hour: '2-digit', minute: '2-digit' })
@@ -60,10 +57,29 @@ function handleSubmit(e)
       </div>
     `;
 
+    const activeClassName = 'card-active'
+
+    // Hide Previous Card
+    const previousCard = document.querySelector('.' + activeClassName);
+    if (previousCard)
+    {
+      previousCard.style.opacity = 0;
+      previousCard.style.display = 'none';
+      previousCard.classList.remove(activeClassName);
+    }
+
+    // Show Corresponding Answer Card
+    const answerCard = document.getElementById(question.replyId);
+    if (answerCard)
+    {
+      answerCard.classList.add(activeClassName);
+      answerCard.style.display = 'flex';
+      answerCard.style.opacity = 1;
+    }
+
+    // Add New History Item
     const historyContainer = document.querySelector('.history > div');
     historyContainer.insertAdjacentHTML('afterbegin', historyItem);
-
-    // alert(question.answer);
   }
 
   clearInput();
