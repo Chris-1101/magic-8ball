@@ -1,5 +1,6 @@
 const React = require('react');
 const GitHubRibbon = require('./_ribbon');
+const Footer = require('./_footer');
 const NavBar = require('./_nav');
 const Logo = require('./_logo');
 
@@ -24,6 +25,7 @@ class PageLayout extends React.Component
           <NavBar />
           <Logo />
           { this.props.children }
+          <Footer />
         </body>
       </html>
     );
