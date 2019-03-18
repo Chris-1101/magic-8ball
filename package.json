@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Simple web-app implementation of the magic 8-ball",
   "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Chris-1101/magic-8ball.git"
@@ -19,6 +22,5 @@
     "react-dom": "^16.8.4",
     "sequelize": "^4.43.0",
     "sqlite3": "^4.0.6"
-  },
-  "devDependencies": {}
+  }
 }
