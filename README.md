@@ -58,8 +58,4 @@ app.js                 (entry point/server)
 
 ### Plotly API Limits :warning:
 
-While setting up graphs on the statistics page, my free account on [plot.ly](https://plot.ly) hit the limit of allowed API calls. This was done using static data, so annoyingly, it hasn't been tested with live data (even though the code is all there now and *should* work).
-
-According to the error message, it should reset every 24h (even though it didn't on Sunday), so I'm hoping this won't be a problem by the time someone gets around to reviewing this :crossed_fingers:
-
-<sup>But just in case...</sup>
+The service used for the statistics charts has a limit on API calls for free accounts like mine. Just a heads up in case the statistics page stop updating!

@@ -6,7 +6,7 @@ class GitHubRibbon extends React.Component
   render()
   {
     const ribbonLink = "https://github.blog/wp-content/uploads/2008/12/forkme_left_darkblue_121621.png?resize=149%2C149";
-    const gitHubLink = "https://github.com/Chris-1101";
+    const gitHubLink = "https://github.com/Chris-1101/magic-8ball";
 
     return (
       <div className="github-link">
